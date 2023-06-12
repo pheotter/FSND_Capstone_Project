@@ -338,6 +338,7 @@ The API will return seven error types when requests fail:
    "success":true,
    "total_categories":7
 }
+```
 #### GET /oscars
 - General:
     - Returns a success value, a list of oscars and total number of oscars.
@@ -401,7 +402,8 @@ The API will return seven error types when requests fail:
    "success":true,
    "total_oscars":2
 }
-## Deployment N/A
+```
+## Deployment: Render Cloud Platform
 
 ## Authors
 Ann Yang
