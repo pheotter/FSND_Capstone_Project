@@ -1,5 +1,6 @@
 # Capstone Project Backend
-This project is a Capstone Project that I do myself for Udacity. In this project you can see movies and actors. If you are director or manager access to much actions; like get, edit, delete and create movies and actors according your asigned rol. As part of the Fullstack Nanodegree, this is a final projetc for ** Full Stack Web Developer Nanodegree Program**. In this project, I applied API endpoint structuring, implementation, Authentication with AUTH0, based on role access management strategies to control different types of user. The last, but not least deploying server with Render Cloud Platform.
+This project is a Capstone Project of the Udacity. In this project you can see movies, actors and Oscars. If you are an acting assistant, you can only access to all get actions. If you are an acting director, you can perform almost all actions. However, if you are an executive producer, you can perform all actions; like get, edit, delete and create movies, actors and Oscars. As part of the Fullstack Nanodegree, this is a final projetc for ** Full Stack Web Developer Nanodegree Program**. In this project, I applied API endpoint structuring, implementation, Authentication with AUTH0, based on role access management strategies to control different types of user. The last, but not least deploying server with Render Cloud Platform.
+
 All backend code follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/).
 ## Getting Started
 
@@ -38,7 +39,7 @@ From within the root directory first ensure you are working using your created v
 Each time you open a new terminal session, run:
 
 ```bash
-export FLASK_APP=api.py
+export FLASK_APP=app.py
 export FLASK_DEBUG=1
 flask run
 ```
@@ -84,21 +85,6 @@ The application is run on http://127.0.0.1:5000/ by default.
      - User: executive_producer@udacity.com
      - Password: @udacity987
      - JWT `eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkxuUEp4X0lYQ3pVTVdwU3drU3kzVSJ9.eyJpc3MiOiJodHRwczovL2Rldi1uNnBodDh1enI3OHpkbmx4LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDg2MGU4NzE0NmRkZGU1Mzg2ZjU2YTciLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTY4NjU0NzcyNCwiZXhwIjoxNjg2NTU0OTI0LCJhenAiOiJ2MTVVTUxZUTB6Nm5sSE4yWVNGVUhrNFBMa1UzeEdUZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOmNhdGVnb3J5IiwiZGVsZXRlOm1vdmllIiwiZGVsZXRlOm9zY2FyIiwiZ2V0OmFjdG9ycyIsImdldDpjYXRlZ29yaWVzIiwiZ2V0Om1vdmllcyIsImdldDpvc2NhcnMiLCJwYXRjaDphY3RvciIsInBhdGNoOmNhdGVnb3J5IiwicGF0Y2g6bW92aWUiLCJwYXRjaDpvc2NhciIsInBvc3Q6YWN0b3IiLCJwb3N0OmNhdGVnb3J5IiwicG9zdDptb3ZpZSIsInBvc3Q6b3NjYXIiXX0.a10Tk-BfT4EgJc3yUFImv8ji7X_kYFErTjOdf-PR4nKBRtW2Moizx1OXrEAdDTVF8K5PVuPH9bYJXrBGdMKpv8xsJCUjJFIGRb3f_MxmVnZEqNRJcGSv0hBdrj8kXjdWYSyDuPuHj8mnqxiuU3668fqoO5pMTqBLBEIB-VoR9Y0NaskFvQbxSR2aYIDqpUZGfXKEB3cNA1d6Kapp3_0ryn7Nk08D8Ipwolh_dynVWJJns49I23By5ZLiYNyl6iqAMo88TKtHyNCD_aF7_bu7J0h7TCVjeOZ-iCYg9kSC2pmszSX04z6puBxr9qpaq7LMDvu2FPfG-pny4jN-U_aY2Q`
-7. Test your endpoints with [Postman](https://getpostman.com).
-   - Register 2 users - assign the Barista role to one and Manager role to the other.
-   - Sign into each account and make note of the JWT.
-   - Import the postman collection `./starter_code/backend/udacity-fsnd-udaspicelatte.postman_collection.json`
-   - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
-   - Run the collection and correct any errors.
-   - Export the collection overwriting the one we've included so that we have your proper JWTs during review!
-   - My test results containing 20 successful cases: `/backend/udacity-fsnd-udaspicelatte.postman_collection_result.json`
-
-### Implement The Server
-
-There are `@TODO` comments throughout the `./backend/src`. We recommend tackling the files in order and from top to bottom:
-
-1. `./src/auth/auth.py`
-2. `./src/api.py`
 
 ## API Reference
 ### Getting Started
@@ -407,24 +393,28 @@ The API will return seven error types when requests fail:
 ### Steps:
 1. Create a Render Account
 2. Set up a Database Service with PostgreSQL
-  On the "New Postgres" page:
-  - Provide a name for the new database service: `postgres-deployment-example`
-  - Select an instance type: `Free`
-  - Click `Create Database` button
+    On the "New Postgres" page:
+    - Provide a name for the new database service: `postgres-deployment-example`
+    - Select an instance type: `Free`
+    - Click `Create Database` button
 3. Deploy Apps with Render's Web Service
-  On the "New Web Service" page:
-  - Provide a name for the new database service: `render-deployment-example`
-  - Select an instance type: `Free`
-  - Enter the build command: `pip install -r requirements.txt`
-  - Enter the Start command: `gunicorn app:app`
+    On the "New Web Service" page:
+    - Provide a name for the new database service: `render-deployment-example`
+    - Select an instance type: `Free`
+    - Enter the build command: `pip install -r requirements.txt`
+    - Enter the Start command: `gunicorn app:app`
 4. Connect the Database Service and Web Service
-  - Copy the Postgres database URL (Internal Database URL) and paste it into the environment variables within the web service
-  - note: the Internal Database URL must use the `postgresql` dialect instead of `postgres`
-  - set environment variable `EXITED` to true
-  - set other environment variables you used in your application
+    - Copy the Postgres database URL (Internal Database URL) and paste it into the environment variable DATABASE_URI within the web service
+    - note: the Internal Database URL must use the `postgresql` dialect instead of `postgres`
+    - set environment variable `EXITED` to true
+    - set other environment variables used in the auth.py file:
+        - AUTH0_DOMAIN
+        - ALGORITHMS
+        - API_AUDIENCE
+        - AUTH0_CLIENT_ID
 5. After the Web Service is ready, you can open your Flask app on the browser by clicking the App URL
 
-###My URL of the hosted API: `https://render-deployment-example-b090.onrender.com`
+### My URL of the hosted API: `https://render-deployment-example-b090.onrender.com`
 
 ## Authors
 Ann Yang
