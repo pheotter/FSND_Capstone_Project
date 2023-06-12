@@ -12,7 +12,7 @@ from config import config
 migrate = Migrate()
 
 
-def create_app(config_file='testing'):
+def create_app(config_file='development'):
     # create and configure the app
     app = Flask(__name__)
     app.app_context().push()
