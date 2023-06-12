@@ -12,10 +12,11 @@ itsdangerous==2.0.1
 Jinja2==3.0.1
 Mako==1.1.4
 MarkupSafe==2.0.1
+pkg_resources==0.0.0
 psycopg2-binary==2.9.1
 pyasn1==0.5.0
 python-dateutil==2.8.1
-python-dotenv @ https://files.pythonhosted.org/packages/44/2f/62ea1c8b593f4e093cc1a7768f0d46112107e790c3e478532329e434f00b/python_dotenv-1.0.0-py3-none-any.whl
+python-dotenv==1.0.0
 python-editor==1.0.4
 python-jose==3.3.0
 rsa==4.9
