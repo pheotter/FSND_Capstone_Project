@@ -4,7 +4,6 @@ import os
 
 USER = os.environ.get('US')
 PASSWORD = os.environ.get('PASSWORD')
-DATABASE_URI = os.environ.get('DATABASE_URI')
 #print("USER: " + USER)
 #print("PASSWORD: " + PASSWORD)
 
@@ -17,7 +16,7 @@ class Config:
 
 class DevelopmentConfig(Config):
    DEBUG=True
-   SQLALCHEMY_DATABASE_URI = DATABASE_URI
+   SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URI")
 
 class TestingConfig(Config):
    DEBUG = True
